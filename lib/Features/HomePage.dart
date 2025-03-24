@@ -55,18 +55,16 @@ class _HomePageState extends State<HomePage> {
                       var Category = Categories[index];
 
                       return Padding(
-                        padding: const EdgeInsets.only(
-                            right:
-                                30.0), // as sizedBox between items, but it's for one item(from the right)
+                        padding: const EdgeInsets.only(right:20.0), // as sizedBox between items, but it's for one item(from the right)
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
                               if (selectedCategoryId == Category.id) {
                                 // If the same category is clicked again, reset the filter
                                 selectedCategoryId = null;
-                                FilteredProducts =
-                                    Food; // Show all products again
-                              } else {
+                                FilteredProducts = Food; // Show all items again
+                              } 
+                              else {
                                 // Otherwise, filter by selected category
                                 selectedCategoryId = Category.id;
                                 FilteredProducts = Food.where((item) {
